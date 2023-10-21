@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+  gap: 10px;
+}
+
+.image {
+  width: 200px;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 1.5rem;
+}
