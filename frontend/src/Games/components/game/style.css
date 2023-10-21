@@ -5,9 +5,21 @@
 
 .image {
   width: 200px;
+  height: fit-content;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .title {
   font-weight: 600;
   font-size: 1.5rem;
+}
+
+.playButton {
+  align-self: flex-end;
+  width: 120px;
 }

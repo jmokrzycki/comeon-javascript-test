@@ -1,29 +1,19 @@
-// import logo from './logo.svg';
-// import './App.css';
-import { useEffect, useState } from "react";
-import Game from "./components/game";
-
-const fetchData = async () => {
-  const data = await fetch("http://localhost:3001/games", { method: "get" });
-  const json = await data.json();
-  console.log(json);
-  return json;
-};
+import { useState } from "react";
+import Categories from "./components/categories";
+import GamesList from "./components/gamesList";
+import GamesContex from "./contexts/gamesContext";
+import "./style.css";
 
 function Games() {
-  const [games, setGames] = useState([]);
-
-  useEffect(() => {
-    fetchData().then((games) => setGames(games));
-    console.log(games);
-  }, []);
+  const [categoryId, setCategoryId] = useState(0);
 
   return (
-    <div className="App">
-      {games.map((game) => (
-        <Game gameData={game} />
-      ))}
-    </div>
+    <GamesContex.Provider value={{ categoryId, setCategoryId }}>
+      <div className="container">
+        <GamesList />
+        <Categories />
+      </div>
+    </GamesContex.Provider>
   );
 }
 
