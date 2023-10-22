@@ -3,6 +3,7 @@ import Categories from "./components/categories";
 import GamesList from "./components/gamesList";
 import GamesContex from "./contexts/gamesContext";
 import SearchGameIinput from "./components/searchGameInput";
+import User from "./components/user";
 import "./style.css";
 
 function Games() {
@@ -15,7 +16,7 @@ function Games() {
     >
       <div className="container">
         <div className="header">
-          <div />
+          <User />
           <SearchGameIinput className="searchInput" />
         </div>
         <div className="content">

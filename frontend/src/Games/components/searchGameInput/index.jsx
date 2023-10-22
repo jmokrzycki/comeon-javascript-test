@@ -26,8 +26,8 @@ function SearchGameIinput({ className }) {
       onKeyDown={handleKeyDown}
       InputProps={{
         endAdornment: (
-          <InputAdornment>
-            <IconButton edge="end" onClick={handleClickSearch}>
+          <InputAdornment position="end">
+            <IconButton onClick={handleClickSearch}>
               <SearchIcon />
             </IconButton>
           </InputAdornment>

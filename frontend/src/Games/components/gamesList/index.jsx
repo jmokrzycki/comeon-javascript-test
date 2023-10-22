@@ -5,7 +5,6 @@ import Game from "../game";
 const fetchData = async () => {
   const data = await fetch("http://localhost:3001/games", { method: "get" });
   const json = await data.json();
-  console.log(json);
   return json;
 };
 
@@ -13,13 +12,9 @@ function GamesList() {
   const [games, setGames] = useState([]);
   const { categoryId } = useContext(GamesContext);
   const { searchString } = useContext(GamesContext);
+
   useEffect(() => {
     fetchData().then((games) => setGames(games));
-
-    const script = document.createElement("script");
-    script.src = "../../../comeon.game.min.js";
-    script.async = true;
-    script.onload = () => this.scriptLoaded();
   }, []);
 
   return (
