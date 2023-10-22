@@ -7,6 +7,7 @@ import LockIcon from "@mui/icons-material/Lock";
 import { useNavigate } from "react-router-dom";
 import { useRef } from "react";
 import "./style.css";
+import { DOMAIN } from "../config";
 
 function Login() {
   const usernameInputRef = useRef(null);
@@ -15,20 +16,19 @@ function Login() {
   const navigate = useNavigate();
 
   const handleLogin = async () => {
-    const data = await fetch("http://localhost:3001/login", {
+    const data = await fetch(`${DOMAIN}/login`, {
       method: "post",
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        username: usernameInputRef.current.value, // rebecka
-        password: passwordInputRef.current.value, // secret
+        username: usernameInputRef.current.value,
+        password: passwordInputRef.current.value,
       }),
     });
 
     const json = await data.json();
-    console.log(json.status);
     if (json.status === "success") {
       setIsLoginError(false);
       const player = json.player;
@@ -43,12 +43,20 @@ function Login() {
     }
   };
 
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      handleLogin();
+    }
+  };
+
   return (
     <div className="loginForm">
       <span className="loginFormTitle">Login</span>
       <TextField
         label="Username"
         inputRef={usernameInputRef}
+        onKeyDown={handleKeyDown}
+        error={isLoginError}
         InputProps={{
           endAdornment: (
             <InputAdornment position="end">
@@ -60,6 +68,8 @@ function Login() {
       <TextField
         label="Username"
         inputRef={passwordInputRef}
+        onKeyDown={handleKeyDown}
+        error={isLoginError}
         InputProps={{
           endAdornment: (
             <InputAdornment position="end">

@@ -1,9 +1,10 @@
 import { useEffect, useState, useContext } from "react";
 import GamesContext from "../../contexts/gamesContext";
+import { DOMAIN } from "../../../config";
 import Game from "../game";
 
 const fetchData = async () => {
-  const data = await fetch("http://localhost:3001/games", { method: "get" });
+  const data = await fetch(`${DOMAIN}/games`, { method: "get" });
   const json = await data.json();
   return json;
 };

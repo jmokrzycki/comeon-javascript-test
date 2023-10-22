@@ -13,3 +13,7 @@
   font-weight: 600;
   align-self: center;
 }
+
+.loginFormError {
+  color: red;
+}

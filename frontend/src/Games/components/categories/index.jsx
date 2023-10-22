@@ -1,13 +1,14 @@
 import { useEffect, useState, useContext } from "react";
 import GamesContext from "../../contexts/gamesContext";
+import { DOMAIN } from "../../../config";
 import "./style.css";
 
 const fetchData = async () => {
-  const data = await fetch("http://localhost:3001/categories", {
+  const data = await fetch(`${DOMAIN}/categories`, {
     method: "get",
   });
   const json = await data.json();
-  console.log(json);
+
   return json;
 };
 
@@ -17,7 +18,6 @@ function Categories() {
 
   useEffect(() => {
     fetchData().then((categories) => setCategories(categories));
-    console.log(categories);
   }, []);
 
   return (
