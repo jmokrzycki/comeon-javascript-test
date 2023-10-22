@@ -1,4 +1,12 @@
-.container {
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+.searchInput {
+  width: 300px;
+}
+
+.content {
   display: flex;
   flex-direction: row;
 }
