@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Button } from "@mui/material";
 import "./style.css";
 
@@ -8,9 +9,9 @@ function Game({ gameData }) {
       <div className="info">
         <div className="title">{gameData.name}</div>
         <div className="description">{gameData.description}</div>
-        <Button className="playButton" variant="contained">
-          {"Play >"}
-        </Button>
+        <Link to={`/game/${gameData.code}`} className="playLink">
+          <Button variant="contained">{"Play >"}</Button>
+        </Link>
       </div>
     </div>
   );

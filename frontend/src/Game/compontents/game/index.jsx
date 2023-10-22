@@ -1,6 +1,9 @@
 import "./style.css";
+import { useParams } from "react-router-dom";
 
-function GameWindow({ code }) {
+function GameWindow() {
+  const { code } = useParams();
+
   return (
     <iframe
       className="container"
