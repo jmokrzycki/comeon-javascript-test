@@ -6,6 +6,7 @@ import PersonIcon from "@mui/icons-material/Person";
 import LockIcon from "@mui/icons-material/Lock";
 import { useNavigate } from "react-router-dom";
 import { useRef } from "react";
+import Paper from "@mui/material/Paper";
 import "./style.css";
 import { DOMAIN } from "../config";
 
@@ -50,7 +51,7 @@ function Login() {
   };
 
   return (
-    <div className="loginForm">
+    <Paper elevation={3} className="loginForm">
       <span className="loginFormTitle">Login</span>
       <TextField
         label="Username"
@@ -81,10 +82,10 @@ function Login() {
       {isLoginError && (
         <span className="loginFormError">Wrong username or password!</span>
       )}
-      <Button variant="contained" onClick={handleLogin}>
+      <Button variant="contained" onClick={handleLogin} className="loginButton">
         Login
       </Button>
-    </div>
+    </Paper>
   );
 }
 

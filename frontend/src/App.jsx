@@ -21,6 +21,7 @@ const router = createBrowserRouter([
 function App() {
   return (
     <div className="App">
+      <img className="logo" src="logo.svg" alt="Game logo" />
       <RouterProvider router={router} />
     </div>
   );

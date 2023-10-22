@@ -17,3 +17,7 @@
 .loginFormError {
   color: red;
 }
+
+.loginButton {
+  height: 56px;
+}

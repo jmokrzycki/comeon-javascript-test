@@ -6,6 +6,11 @@
   width: 300px;
 }
 
+.container {
+  margin: 0 60px 60px;
+  padding: 35px;
+}
+
 .content {
   display: flex;
   flex-direction: row;

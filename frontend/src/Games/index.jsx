@@ -4,6 +4,7 @@ import GamesList from "./components/gamesList";
 import GamesContex from "./contexts/gamesContext";
 import SearchGameIinput from "./components/searchGameInput";
 import User from "./components/user";
+import Paper from "@mui/material/Paper";
 import "./style.css";
 
 function Games() {
@@ -14,7 +15,7 @@ function Games() {
     <GamesContex.Provider
       value={{ categoryId, setCategoryId, searchString, setSearchString }}
     >
-      <div className="container">
+      <Paper elevation={3} className="container">
         <div className="header">
           <User />
           <SearchGameIinput className="searchInput" />
@@ -23,7 +24,7 @@ function Games() {
           <GamesList />
           <Categories />
         </div>
-      </div>
+      </Paper>
     </GamesContex.Provider>
   );
 }
