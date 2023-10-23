@@ -1,8 +1,21 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Navigate,
+} from "react-router-dom";
 import Games from "./Games";
 import Game from "./Game";
 import Login from "./Login";
 import "./styles.scss";
+
+export const ProtectedRoute = ({ children }) => {
+  const isLogged = sessionStorage.getItem("name") !== null;
+
+  if (!isLogged) {
+    return <Navigate to="/login" />;
+  }
+  return children;
+};
 
 const router = createBrowserRouter([
   {
@@ -11,11 +24,19 @@ const router = createBrowserRouter([
   },
   {
     path: "/games",
-    element: <Games />,
+    element: (
+      <ProtectedRoute>
+        <Games />
+      </ProtectedRoute>
+    ),
   },
   {
     path: "/game/:code",
-    element: <Game />,
+    element: (
+      <ProtectedRoute>
+        <Game />
+      </ProtectedRoute>
+    ),
   },
 ]);
 

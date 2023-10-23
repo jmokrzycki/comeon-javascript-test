@@ -30,6 +30,7 @@ function Login() {
     });
 
     const json = await data.json();
+
     if (json.status === "success") {
       setIsLoginError(false);
       const player = json.player;
