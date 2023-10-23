@@ -1,10 +1,14 @@
 .games {
-  margin: 0 60px 60px;
+  margin: 0 auto;
   padding: 35px;
+  max-width: 1200px;
 
   &__header {
     display: flex;
     justify-content: space-between;
+    gap: 30px;
+    column-gap: 30px;
+    flex-wrap: wrap;
   }
 
   &__searchInput {
@@ -16,5 +20,14 @@
     flex-direction: row;
     gap: 30px;
     margin-top: 30px;
+    flex-wrap: wrap-reverse;
+  }
+}
+
+@media (min-width: 1200px) {
+  .games {
+    &__content {
+      flex-wrap: nowrap;
+    }
   }
 }

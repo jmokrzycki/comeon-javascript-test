@@ -5,13 +5,17 @@ import "./styles.scss";
 
 function Game({ gameData }) {
   return (
-    <div className="game">
-      <img className="game__image" src={gameData.icon} alt="Game logo" />
-      <div className="game__info">
-        <div className="game__title">{gameData.name}</div>
+    <div className="gameSection">
+      <img className="gameSection__image" src={gameData.icon} alt="Game logo" />
+      <div className="gameSection__info">
+        <div className="gameSection__title">{gameData.name}</div>
         <div>{gameData.description}</div>
         <Link to={`/game/${gameData.code}`} className="gameContainer__playLink">
-          <Button variant="contained" endIcon={<ArrowForwardIosIcon />}>
+          <Button
+            variant="contained"
+            endIcon={<ArrowForwardIosIcon />}
+            style={{ backgroundColor: "black" }}
+          >
             Play
           </Button>
         </Link>

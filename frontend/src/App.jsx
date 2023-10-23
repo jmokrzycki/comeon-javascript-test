@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Games from "./Games";
 import Game from "./Game";
 import Login from "./Login";
+import "./styles.scss";
 
 const router = createBrowserRouter([
   {

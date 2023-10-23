@@ -86,6 +86,7 @@ function Login() {
         variant="contained"
         onClick={handleLogin}
         className="loginForm__loginButton"
+        style={{ backgroundColor: "black" }}
       >
         Login
       </Button>

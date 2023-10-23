@@ -2,6 +2,7 @@ import { useEffect, useState, useContext } from "react";
 import GamesContext from "../../contexts/gamesContext";
 import { DOMAIN } from "../../../config";
 import Game from "../game";
+import SentimentDissatisfiedIcon from "@mui/icons-material/SentimentDissatisfied";
 import "./styles.scss";
 
 const fetchData = async () => {
@@ -30,7 +31,12 @@ function GamesList() {
       <div className="gamesList__title">Games</div>
       {filteredGames.length > 0 &&
         filteredGames.map((game) => <Game gameData={game} key={game.code} />)}
-      {filteredGames.length === 0 && <div>No games found</div>}
+      {filteredGames.length === 0 && (
+        <div className="gamesList__noGames">
+          No games found &nbsp;
+          <SentimentDissatisfiedIcon />
+        </div>
+      )}
     </div>
   );
 }

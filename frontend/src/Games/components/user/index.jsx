@@ -28,6 +28,7 @@ function User() {
           variant="contained"
           onClick={handleLogout}
           startIcon={<ArrowBackIosIcon />}
+          style={{ backgroundColor: "black" }}
         >
           Log Out
         </Button>
