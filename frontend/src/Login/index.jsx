@@ -7,7 +7,7 @@ import LockIcon from "@mui/icons-material/Lock";
 import { useNavigate } from "react-router-dom";
 import { useRef } from "react";
 import Paper from "@mui/material/Paper";
-import "./style.css";
+import "./styles.scss";
 import { DOMAIN } from "../config";
 
 function Login() {
@@ -52,7 +52,7 @@ function Login() {
 
   return (
     <Paper elevation={3} className="loginForm">
-      <span className="loginFormTitle">Login</span>
+      <span className="loginForm__title">Login</span>
       <TextField
         label="Username"
         inputRef={usernameInputRef}
@@ -67,7 +67,7 @@ function Login() {
         }}
       />
       <TextField
-        label="Username"
+        label="Password"
         inputRef={passwordInputRef}
         onKeyDown={handleKeyDown}
         error={isLoginError}
@@ -80,9 +80,13 @@ function Login() {
         }}
       />
       {isLoginError && (
-        <span className="loginFormError">Wrong username or password!</span>
+        <span className="loginForm__error">Wrong username or password!</span>
       )}
-      <Button variant="contained" onClick={handleLogin} className="loginButton">
+      <Button
+        variant="contained"
+        onClick={handleLogin}
+        className="loginForm__loginButton"
+      >
         Login
       </Button>
     </Paper>

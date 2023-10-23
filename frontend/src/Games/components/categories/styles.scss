@@ -1,0 +1,19 @@
+.categories {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 300px;
+
+  &__category {
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  &__title {
+    font-size: 2rem;
+    font-weight: 600;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e0e0e0;
+  }
+}

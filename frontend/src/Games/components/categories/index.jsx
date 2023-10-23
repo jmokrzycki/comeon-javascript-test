@@ -1,7 +1,7 @@
 import { useEffect, useState, useContext } from "react";
 import GamesContext from "../../contexts/gamesContext";
 import { DOMAIN } from "../../../config";
-import "./style.css";
+import "./styles.scss";
 
 const fetchData = async () => {
   const data = await fetch(`${DOMAIN}/categories`, {
@@ -22,9 +22,10 @@ function Categories() {
 
   return (
     <div className="categories">
+      <div className="categories__title">Categories</div>
       {categories.map((category) => (
         <div
-          className="category"
+          className="categories__category"
           key={category.id}
           onClick={() => setCategoryId(category.id)}
         >

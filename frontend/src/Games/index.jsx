@@ -5,7 +5,7 @@ import GamesContex from "./contexts/gamesContext";
 import SearchGameIinput from "./components/searchGameInput";
 import User from "./components/user";
 import Paper from "@mui/material/Paper";
-import "./style.css";
+import "./styles.scss";
 
 function Games() {
   const [categoryId, setCategoryId] = useState(0);
@@ -15,12 +15,12 @@ function Games() {
     <GamesContex.Provider
       value={{ categoryId, setCategoryId, searchString, setSearchString }}
     >
-      <Paper elevation={3} className="container">
-        <div className="header">
+      <Paper elevation={3} className="games">
+        <div className="games__header">
           <User />
-          <SearchGameIinput className="searchInput" />
+          <SearchGameIinput className="games__searchInput" />
         </div>
-        <div className="content">
+        <div className="games__content">
           <GamesList />
           <Categories />
         </div>

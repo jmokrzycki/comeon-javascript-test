@@ -6,7 +6,7 @@ function GameWindow() {
 
   return (
     <iframe
-      className="container"
+      className="gameWindow"
       src={`https://d2k3wptpwv4u4d.cloudfront.net/mcasino/quickspin/${code}/index.html?moneymode=fun`}
       title="Game"
     />

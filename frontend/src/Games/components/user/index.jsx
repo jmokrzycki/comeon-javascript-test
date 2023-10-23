@@ -1,6 +1,7 @@
 import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
-import "./style.css";
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
+import "./styles.scss";
 
 function User() {
   const name = sessionStorage.getItem("name");
@@ -14,18 +15,24 @@ function User() {
   };
 
   return (
-    <>
-      <div className="containerUser">
-        <img className="avatar" src={avatar} alt="Avatar" />
-        <div className="userInfo">
-          <div className="name">{name}</div>
-          <div className="event">{event}</div>
+    <div>
+      <div className="user">
+        <img className="user__avatar" src={avatar} alt="Avatar" />
+        <div className="user__info">
+          <div className="user__name">{name}</div>
+          <div className="user__event">{event}</div>
         </div>
       </div>
-      <Link to={`/login`} className="playLink">
-        <Button onClick={handleLogout}>Logout</Button>
+      <Link to={`/login`} className="user__logout">
+        <Button
+          variant="contained"
+          onClick={handleLogout}
+          startIcon={<ArrowBackIosIcon />}
+        >
+          Log Out
+        </Button>
       </Link>
-    </>
+    </div>
   );
 }
 

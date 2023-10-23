@@ -1,0 +1,26 @@
+.user {
+  display: flex;
+  flex-direction: row;
+  width: 400px;
+  height: 50px;
+  gap: 10px;
+
+  &__avatar {
+    border-radius: 100%;
+  }
+
+  &__userInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__name {
+    font-weight: 600;
+  }
+
+  &__logout {
+    display: block;
+    margin-top: 10px;
+  }
+}
