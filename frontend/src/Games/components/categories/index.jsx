@@ -20,19 +20,21 @@ function Categories() {
     fetchData().then((categories) => setCategories(categories));
   }, []);
 
+  const handleCategoryClick = (categoryId) => {
+    setCategoryId(categoryId);
+  };
+
   return (
-    <div className="categories">
-      <div className="categories__title">Categories</div>
-      {categories.map((category) => (
-        <div
-          className="categories__category"
-          key={category.id}
-          onClick={() => setCategoryId(category.id)}
-        >
-          {category.name}
-        </div>
-      ))}
-    </div>
+    <nav className="categories" aria-label="Categories">
+      <h2 className="categories__title">Categories</h2>
+      <ul className="categories__list">
+        {categories.map((category) => (
+          <li className="categories__category" key={category.id} onClick={() => handleCategoryClick(category.id)} role="button" tabIndex={0}>
+            {category.name}
+          </li>
+        ))}
+      </ul>
+    </nav>
   );
 }
 

@@ -6,16 +6,12 @@ import "./styles.scss";
 function Game({ gameData }) {
   return (
     <div className="gameSection">
-      <img className="gameSection__image" src={gameData.icon} alt="Game logo" />
+      <img className="gameSection__image" src={gameData.icon} alt={`Logo for ${gameData.name}`} />
       <div className="gameSection__info">
-        <div className="gameSection__title">{gameData.name}</div>
-        <div>{gameData.description}</div>
+        <h2 className="gameSection__title">{gameData.name}</h2>
+        <p>{gameData.description}</p>
         <Link to={`/game/${gameData.code}`} className="gameContainer__playLink">
-          <Button
-            variant="contained"
-            endIcon={<ArrowForwardIosIcon />}
-            style={{ backgroundColor: "black" }}
-          >
+          <Button variant="contained" endIcon={<ArrowForwardIosIcon />} style={{ backgroundColor: "black" }} aria-label={`Play ${gameData.name}`}>
             Play
           </Button>
         </Link>

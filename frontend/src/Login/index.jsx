@@ -53,7 +53,6 @@ function Login() {
 
   return (
     <Paper elevation={3} className="loginForm">
-      <span className="loginForm__title">Login</span>
       <TextField
         label="Username"
         inputRef={usernameInputRef}
@@ -65,10 +64,13 @@ function Login() {
               <PersonIcon />
             </InputAdornment>
           ),
+          "aria-invalid": isLoginError ? "true" : "false",
+          "aria-describedby": "form-error",
         }}
       />
       <TextField
         label="Password"
+        type="password"
         inputRef={passwordInputRef}
         onKeyDown={handleKeyDown}
         error={isLoginError}
@@ -78,17 +80,16 @@ function Login() {
               <LockIcon />
             </InputAdornment>
           ),
+          "aria-invalid": isLoginError ? "true" : "false",
+          "aria-describedby": "form-error",
         }}
       />
       {isLoginError && (
-        <span className="loginForm__error">Wrong username or password!</span>
+        <span id="form-error" className="loginForm__error">
+          Wrong username or password!
+        </span>
       )}
-      <Button
-        variant="contained"
-        onClick={handleLogin}
-        className="loginForm__loginButton"
-        style={{ backgroundColor: "black" }}
-      >
+      <Button variant="contained" onClick={handleLogin} className="loginForm__loginButton" style={{ backgroundColor: "black" }}>
         Login
       </Button>
     </Paper>

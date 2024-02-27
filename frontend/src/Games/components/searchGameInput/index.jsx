@@ -27,7 +27,7 @@ function SearchGameIinput({ className }) {
       InputProps={{
         endAdornment: (
           <InputAdornment position="end">
-            <IconButton onClick={handleClickSearch}>
+            <IconButton onClick={handleClickSearch} aria-label="Search">
               <SearchIcon />
             </IconButton>
           </InputAdornment>
